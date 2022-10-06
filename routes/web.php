@@ -31,4 +31,7 @@ Route::get('/adddetailss',[staffController::class,'adddetailss']);
 Route::post('/registers',[staffController::class,'registers']);
 Route::get('/logout',[staffController::class,'logout']);
 Route::get('/readdetails',[staffController::class,'readdetails']);
+Route::get('/readtable',[staffController::class,'readtable']);
 Route::get('/adminview',[staffController::class,'adminview']);
+Route::get('/dtlstable',[staffController::class,'dtlstable']);
+Route::post('/registertable',[staffController::class,'registertable']);

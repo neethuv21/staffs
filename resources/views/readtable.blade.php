@@ -30,34 +30,16 @@
     <tr class="table" style="background-color:#BA87AE">
      
      
-	<td style="font-weight: 600;">{{$value->name}}</td>
-	<td style="font-weight: 600;">{{$value->code}}</td>
-	<td style="font-weight: 600;">{{$value->unit}}</td>
-	<td style="font-weight: 600;">{{$value->tax}}</td>	
-	<td style="font-weight: 600;">{{$value->hsncode}}</td>	
+	<td style="font-weight: 600;">{{$value->iname}}</td>
+	<td style="font-weight: 600;">{{$value->icode}}</td>
+	<td style="font-weight: 600;">{{$value->sunit}}</td>
+	<td style="font-weight: 600;">{{$value->stax}}</td>	
+	<td style="font-weight: 600;">{{$value->shsncode}}</td>	
  
-   <td style="font-weight: 600;">{{$value->date}}</td>	
+   <td style="font-weight: 600;">{{$value->sdate}}</td>	
  
  
      		
-     
-    </tr>
-
-@endforeach
-      @foreach($result1 as $value)   
-    <tr class="table" style="background-color:#BA87AE">
-     
-     
-  <td style="font-weight: 600;">{{$value->iname}}</td>
-  <td style="font-weight: 600;">{{$value->icode}}</td>
-  <td style="font-weight: 600;">{{$value->sunit}}</td>
-  <td style="font-weight: 600;">{{$value->stax}}</td>  
-  <td style="font-weight: 600;">{{$value->shsncode}}</td>  
- 
-   <td style="font-weight: 600;">{{$value->sdate}}</td>  
- 
- 
-        
      
     </tr>
     @endforeach

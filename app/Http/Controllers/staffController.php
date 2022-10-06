@@ -8,7 +8,7 @@ use App\Models\staffone;
 use App\Models\stafftwo;
 use App\Models\adminlogin;
 use App\Models\adddetail;
-use App\Models\detail;
+use App\Models\detailtable;
 
 
 class staffController extends Controller
@@ -52,7 +52,7 @@ class staffController extends Controller
             $id=session('sess');
             
             
-            return redirect('/adddetails');
+            return redirect('/dtlstable');
 
         }else{
             return redirect('/staff2')->with('error','invalid details');
@@ -99,6 +99,24 @@ public function adddetails(){
 
     }
 
+    public function dtlstable(){
+        return view('dtlstable');
+    }
+    public function registertable(Request $req){
+       $uid=session('sess');
+        $itemname=$req->input('iname');
+        $code=$req->input('icode');
+
+        $unit=$req->input('sunit');
+        $tax=$req->input('stax');
+          $hsncode=$req->input('shsncode');
+            $date=$req->input('sdate');
+        $data=['uid'=>$uid,'iname'=>$itemname,'icode'=>$code,'sunit'=>$unit,'stax'=>$tax,'shsncode'=>$hsncode,'sdate'=>$date,];
+        detailtable::insert($data);
+        return redirect('/readtable');
+
+    }
+
     
 
 public function logout(Request $req){
@@ -108,15 +126,25 @@ public function logout(Request $req){
 
 
      public function readdetails(){
-        $uid=session('sess');
-        $data['result']=adddetail::where('id',$uid)->get();
+      
+        $data['result']=adddetail::get();
 
         return view('readdetails',$data);
+    }
+
+    public function readtable(){
+      $uid=session('sess');
+        $data['result']=detailtable::get();
+
+        return view('readtable',$data);
     }
 
      public function adminview(){
        
         $data['result']=adddetail::get();
+        $data['result1']=detailtable::get();
+
+
 
         return view('adminview',$data);
     }
